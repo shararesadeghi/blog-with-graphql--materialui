@@ -8,7 +8,7 @@ import { ThemeProvider } from '@mui/material';
 import theme from './mui/theme';
 
 const client = new ApolloClient({
-  uri:"https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clf9pr08e168s01ueaoge6e9q/master",
+  uri:process.env.REACT_APP_GRAPHCMS_URI,
   cache: new InMemoryCache()
 })
 
