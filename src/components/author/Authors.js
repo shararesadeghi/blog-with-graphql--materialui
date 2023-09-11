@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_AUTHORS_INFO } from '../../graphql/queries';
 import { Grid, Avatar, Typography, Divider } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Authors = () => {
 
@@ -16,12 +17,12 @@ const Authors = () => {
                 data.authors.map((author,index)=>( 
                     <React.Fragment key={author.id}>
                 <Grid item xs={12} padding={2} >
-                    <a href={`/authors/${author.slug}`} style={{display:"flex", alignItems:"center", textDecoration:"none"}}>
+                    <Link to={`/authors/${author.slug}`} style={{display:"flex", alignItems:"center", textDecoration:"none"}}>
                     <Avatar src={author.avatar.url} sx={{marginLeft:2}}/>
                     <Typography component="p" variant="p" color="text.secondary">
                         {author.name}
                     </Typography>
-                    </a>
+                    </Link>
                 </Grid>
                 {
                     index !== data.authors.length - 1 && (
