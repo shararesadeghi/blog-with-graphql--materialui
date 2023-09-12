@@ -16,7 +16,7 @@ const CardEL = ({title, slug, coverPhoto, author}) => {
             }
             <CardMedia component="img" height="194" image={coverPhoto.url} alt={slug}/>
             <CardContent>
-                <Typography component="h3" variant="h6" color="text.primary" fontWeight={600}>{title}</Typography>
+                <Typography component="h3" variant="h6" color="text.primary" fontWeight={600} fontSize={18}>{title}</Typography>
             </CardContent>
             <Divider variant="middle" sx={{margin: "10px"}}/>
             <CardActions>
