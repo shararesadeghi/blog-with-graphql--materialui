@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { GET_AUTHOR_INFO } from '../../graphql/queries';
 import {Avatar, Container, Grid, Typography} from '@mui/material';
 import CardEL from './../shared/CardEL';
+import Loader from './../shared/Loader';
 
 const AuthorPage = () => {
 
@@ -13,7 +14,7 @@ const AuthorPage = () => {
         variables:{slug}
     })
     console.log(data);
-    if(loading) return <h4>Loading ...</h4>
+    if(loading) return <Loader/>
     if(errors) return <h4>Errors ...</h4>
     return (
         <Container maxWidth="lg">
