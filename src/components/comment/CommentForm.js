@@ -1,11 +1,14 @@
 import React,{useState} from 'react';
 import { Grid, TextField, Typography, Button } from '@mui/material';
+import { SEND_COMMENT } from '../../graphql/mutations';
 
 const CommentForm = ({slug}) => {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [text, setText] = useState("");
+
+    const [sendComment,{loading, data, errors}] = useMutation(SEND_COMMENT,{variables:{name,email,text,slug}});
     return (
         <Grid container sx={{boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
              borderRadius: 4,
