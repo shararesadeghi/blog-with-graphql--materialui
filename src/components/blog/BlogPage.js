@@ -7,6 +7,7 @@ import {Container, Grid, Typography, Avatar} from '@mui/material';
 import { ArrowBackRounded } from '@mui/icons-material';
 import { Box } from '@mui/system';
 import  sanitizeHtml from 'sanitize-html';
+import CommentForm from '../comment/CommentForm';
 
 const BlogPage = () => {
 
@@ -44,6 +45,9 @@ const BlogPage = () => {
                 </Grid>
                 <Grid item xs={12} mt={5}>
                     <div dangerouslySetInnerHTML={{__html:sanitizeHtml(data.post.content.html)}}></div>
+                </Grid>
+                <Grid item xs={12}>
+                    <CommentForm slug={slug}/>
                 </Grid>
             </Grid>
         </Container>
