@@ -10,7 +10,7 @@ const SEND_COMMENT = gql`
          createComment(
              data:{
                  name:$name
-                 email:$$email
+                 email:$email
                  text:$text
                  post:{ connect: { slug:$slug}}
              }
