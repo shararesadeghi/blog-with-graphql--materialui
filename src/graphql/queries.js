@@ -76,4 +76,6 @@ const GET_BLOG_INFO = gql`
      }
 `;
 
+
+
 export {GET_BLOGS_INFO, GET_AUTHORS_INFO, GET_AUTHOR_INFO,GET_BLOG_INFO};
